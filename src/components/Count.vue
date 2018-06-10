@@ -2,30 +2,25 @@
     <div>
         <h2>{{msg}}</h2>
         <hr/>
-        <!-- <h3>{{$store.state.count}}</h3> -->
-        <head>{{$store.state.count}}</head>
+        <h3>{{$store.state.count}}</h3>
+        <p>
+            <button @click="$store.commit('add')">add</button>
+            <button @click="$store.commit('reduce')">reduce</button>
+        </p>
     </div>
     
 </template>
 
 <script>
-    import store from '../vuex/store';
-    // export default {
-    //     data(){
-    //         return{
-    //             msg:'Hello  Vuex '
-    //         }
-    //     },
-    //     store
-    // }
-
+    import store from '@/vuex/store';
     export default {
-        name: 'Count',
-        data () {
-            return {
-                msg: 'Hello Vuex'
+        data(){
+            return{
+                msg:'Hello  Vuex '
             }
         },
         store
     }
+
+    
 </script>
