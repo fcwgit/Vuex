@@ -22,6 +22,21 @@ const getters={
     }
 }
 
+const actions={
+    addAction(context){
+        context.commit('add',10);
+        setTimeout(() => {
+            context.commit('reduce')
+        }, 3000);
+        console.log('我比reduce先执行了');
+    },
+    reduceAction({commit}){
+        commit('reduce')
+    }
+}
+
+
+
 export default new Vuex.Store({
-    state,mutations,getters
+    state,mutations,getters,actions
 })
