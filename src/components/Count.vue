@@ -32,11 +32,11 @@
         // }),
         // computed:mapState(['count']),
         computed:{
-            ...mapState['count'],
-            count(){
-                return this.$store.getters.count;
-            }
-            // ...mapGetters['count']
+            ...mapState(['count']),
+            // count(){
+            //     return this.$store.getters.count;
+            // }
+            ...mapGetters(['count'])
         },
         methods:mapMutations(['add','reduce']),
         store
